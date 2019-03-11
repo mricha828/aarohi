@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Zipper - Responsive HTML Template</title>
+<!--
+
+Template 2084 Zipper
+
+http://www.tooplate.com/view/2084-zipper
+
+-->
+    <!-- load stylesheets -->
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">  <!-- Google web font "Open Sans" -->
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">                <!-- Font Awesome -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">                                      <!-- Bootstrap style -->
+    <link rel="stylesheet" href="css/tooplate-style.css">                                   <!-- Templatemo style -->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+          <![endif]-->
+
+
+
+          <style>
+
+         html{
+            scroll-behavior: smooth;
+         }
+
+.hob {
+  width: 300px;
+  height: 100px;
+  background-color: yellow;
+  border: 1px solid black;
+}
+@keyframes spin {
+  from{
+    transform: rotateY(0deg);
+    moz-transform: rotateY(0deg); //Firefox
+    ms-transform: rotateY(0deg); //Microsoft Browsers
+  }
+  to{
+    transform: rotateY(360deg);
+    moz-transform: rotateY(360deg); //Firefox
+    ms-transform: rotateY(360deg); //Microsoft Browsers
+  }
+}
+@-webkit-keyframes spin{
+  from{-webkit-transform: rotateY(0deg);}
+  to{-webkit-transform: rotateY(360deg);}
+}
+.imageSpin{
+  animation-name: spin;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 5s;
+  -webkit-animation-name: spin;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-duration: 5s;
+}
+section {
+  height: 100vh;
+  width: 100%;
+  display: table;
+  
+}
+section.ok{
+  background-color: #555;
+}
+
+p{
+  color: white;
+  font-family: arial;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.scroll-down {
+  opacity: 1;
+  -webkit-transition: all .5s ease-in 3s;
+  transition: all .5s ease-in 3s;
+}
+
+.scroll-down {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  margin-left: -16px;
+  display: block;
+  width: 32px;
+  height: 32px;
+  border: 2px solid #FFF;
+  background-size: 14px auto;
+  border-radius: 50%;
+  z-index: 2;
+  -webkit-animation: bounce 2s infinite 2s;
+  animation: bounce 2s infinite 2s;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+  transform: scale(1)
+}
+
+.scroll-down:before {
+    position: absolute;
+    top: calc(50% - 8px);
+    left: calc(50% - 6px);
+    transform: rotate(-45deg);
+    display: block;
+    width: 12px;
+    height: 12px;
+    content: "";
+    border: 2px solid white;
+    border-width: 0px 0 2px 2px;
+}
+
+@keyframes bounce {
+  0%,
+  100%,
+  20%,
+  50%,
+  80% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-10px);
+    -ms-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+  60% {
+    -webkit-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
+}
+
+.dropbtn {
+     
+  background-color:transparent;
+  color: white;
+  padding: 16px;
+  position: right;
+  width:10%;
+  height:10%;
+  font-size: 16px;
+  border: none;
+  
+  cursor: pointer;
+
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+}
+
+.dropdown {
+     
+  position: relative;
+  display: inline-block;
+  
+ top:0px;
+ right:0px;
+
+
+}
+.demo a {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  z-index: 2;
+  display: inline-block;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  color: #fff;
+  font : normal 400 20px/1 'Josefin Sans', sans-serif;
+  letter-spacing: .1em;
+  text-decoration: none;
+  transition: opacity .3s;
+}
+.demo a:hover {
+  opacity: .5;
+}
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+ 
+ 
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
+</style>
+</head>
+
+    <body>
+
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+ $(function() {
+    $('.scroll-down').click (function() {
+      $('html, body').animate({scrollTop: $('section.ok').offset().top }, 'slow');
+      return false;
+    });
+  });
+</script>
+
+
+
+     
+                
+                
+
+
+
+
+                            
+                 
+           
+            
+            <section class="tm-section tm-section-home tm-flex-center" id="home">                
+                   <div class="dropdown" >
+  <button onclick="myFunction()" class="dropbtn" ><i class="fa fa-bars"></i></button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#previous">Previous Years</a>
+    <a href="#social">Social Initiatives</a>
+    <a href="#cn">CN</a>
+    <a href="#events">Events</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#sponsers">Sponsers</a>
+    <a href="#contact">Contact</a>
+
+
+  </div>
+</div>
+                <div class="tm-hero">
+                    <div class="row">
+                       
+<img class="imageSpin" src="img/hobo.jpg" width=200px; height=200px;>
+
+                    </div>
+                </div>                
+
+<a href="#about" class="scroll-down" address="true"></a>
+
+            </section>
+            
+            <!-- Section 2 -->
+            <section class="tm-section tm-section-about" id="about">
+
+                <div class="tm-page-content-width">
+                    <div class="tm-bg-black-translucent tm-content-box tm-content-box-right tm-flex-center">
+                        <div class="tm-content-box-inner">
+                            <h2 class="tm-section-title">Mauris quis odio id sapien</h2>
+                            <p>Aliquam sollicitudin mi sollicitudin justo viverra, nec posuere lorem fringilla. Morbi quam arcu, dignissim ac rutrum vel, hendrerit feugiat tortor. Ut vulputate eros non ante lobortis viverra.</p>
+                            <p>Vestibulum ut est lorem. Sed nec blandit lorem, eget iaculis quam. Mauris quis odio id sapien scelerisque mollis. Maecenas aliquet luctus erat sit amet aliquet. Vestibulum mattis porta tristique. Vivamus suscipit bibendum lorem, at efficitur enim hendrerit nec.</p>   
+                        </div>                        
+                    </div>                    
+                </div>
+           <a href="#previous" class="scroll-down" address="true"></a>
+            </section>
+            <!-- Section 3 -->
+            <section class="tm-section tm-section-services" id="previous">
+
+                <div class="tm-page-content-width">
+                    <div class="tm-bg-black-translucent tm-content-box tm-flex-center">
+                        <div class="tm-content-box-inner">
+                            <h2 class="tm-section-title">Our Services</h2>
+                            <p>Phasellus fringilla pharetra nunc sit amet fringilla. Vestibulum augue turpis, molestie sit amet odio eget, ornare mattis nisl.</p>
+                            <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Integer ut justo arcu. Nullam a semper odio. Nam et conque libero, et placerat est.</p>
+                            <p>Integer consectetur hendrerit dolor, quis scelerisque risus mattis quis. Pellentesque dapibus ornare nisl. Fusce facilisis pulvinar magna. Class aptent taciti sociosqu.</p>
+                        </div>                        
+                    </div> 
+                </div>  
+                <div class="demo">
+
+  <a href="#social"><span></span><i class="fa fa-arrow-down"></i></a>
+</div>              
+          <!--  </section>
+
+            <!-- Section 4 -->
+            <section class="tm-section tm-section-testimonials" id="social">
+                <div class="tm-page-content-width">
+                    <h2 class="tm-section-title tm-section-title-big text-xs-center tm-text-black">Testimonials</h2>
+                    <div class="row">
+                        <div class="tm-3-col-container">                                        
+                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 tm-3-col-textbox">
+                                <div class="text-xs-left tm-textbox tm-textbox-padding tm-bg-black-translucent tm-3-col-textbox-inner">
+                                    <i class="fa fa-4x fa-pagelines tm-fa"></i>
+                                                                               
+                                    <p class="tm-text tm-margin-b-0">Ut vulputate eros non ante lobortis viverra. Vestibulum ut est lorem. Sed nec blandit lorem, eget iaculis quam. Mauris quis odio id sapien scelerisque mollis.</p>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 tm-3-col-textbox">
+                                <div class="text-xs-left tm-textbox tm-textbox-padding tm-bg-black-translucent tm-3-col-textbox-inner">
+                                    <i class="fa fa-4x fa-thumbs-o-up tm-fa"></i>
+                                    
+                                    <p class="tm-text tm-margin-b-0">Nulla eget risus fringilla, fermentum arcu eu, vestibulum lorem. Aliquam imperdiet leo eget turpis ornare rhoncus. Sed tempor interdum sapien tempor.</p>
+                                </div>          
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 tm-3-col-textbox">
+                                <div class="text-xs-left tm-textbox tm-textbox-padding tm-bg-black-translucent tm-3-col-textbox-inner">
+                                    <i class="fa fa-4x fa-tree tm-fa"></i>
+                                    
+                                    <p class="tm-text tm-margin-b-0">Aenean porttitor a sapien non venenatis. Curabitur quis ex eu tellus tristique vestibulum id ac arcu. Fusce eu suscipit massa. Lorem ipsum dolor sit amet.</p>
+                                </div>          
+                            </div>                                        
+                        </div>
+                    </div>
+                </div> 
+                   <div class="demo">
+
+  <a href="#cn"><span></span><i class="fa fa-arrow-down"></i></a>
+</div>                 
+            </section>
+<!-- Section 5 -->
+            <section class="tm-section tm-section-contact" id="cn">
+                <div class="tm-page-content-width">
+                    <div class="tm-bg-black-translucent text-xs-left tm-textbox tm-2-col-textbox-2 tm-textbox-padding tm-textbox-padding-contact tm-content-box  tm-content-box-right">
+                        <h2 class="tm-section-title">Contact Us</h2>
+                        
+                        <!-- contact form -->
+                        <form action="index.html" method="post" class="tm-contact-form">
+
+                            <div class="form-group">
+                                <input type="text" id="contact_name" name="contact_name" class="form-control" placeholder="Your Name"  required/>
+                            </div>
+                
+                            <div class="form-group">                                                        
+                                <input type="email" id="contact_email" name="contact_email" class="form-control" placeholder="Your Email"  required/>
+                            </div>                                                        
+                            
+                            <div class="form-group">
+                                <textarea id="contact_message" name="contact_message" class="form-control" rows="5" placeholder="Message" required></textarea>
+                            </div> 
+
+                            <button type="submit" class="tm-submit-btn">Submit</button>  
+                        
+                        </form>  
+                    </div>
+                </div>
+                <div class="tm-bg-black-translucent tm-copyright-div">
+                    <p class="tm-copyright-text">Copyright &copy; 2016 Your Company - Design: Tooplate</p>
+                </div>  
+
+                    <div class="demo">
+
+  <a href="#events"><span></span><i class="fa fa-arrow-down"></i></a>
+</div>                   
+            </section>
+             <section class="tm-section tm-section-contact" id="events">
+                <div class="tm-page-content-width">
+                    <div class="tm-bg-black-translucent text-xs-left tm-textbox tm-2-col-textbox-2 tm-textbox-padding tm-textbox-padding-contact tm-content-box  tm-content-box-right">
+                        <h2 class="tm-section-title">Contact Us</h2>
+                        
+                        <!-- contact form -->
+                        <form action="index.html" method="post" class="tm-contact-form">
+
+                            <div class="form-group">
+                                <input type="text" id="contact_name" name="contact_name" class="form-control" placeholder="Your Name"  required/>
+                            </div>
+                
+                            <div class="form-group">                                                        
+                                <input type="email" id="contact_email" name="contact_email" class="form-control" placeholder="Your Email"  required/>
+                            </div>                                                        
+                            
+                            <div class="form-group">
+                                <textarea id="contact_message" name="contact_message" class="form-control" rows="5" placeholder="Message" required></textarea>
+                            </div> 
+
+                            <button type="submit" class="tm-submit-btn">Submit</button>  
+                        
+                        </form>  
+                    </div>
+                </div>
+                <div class="tm-bg-black-translucent tm-copyright-div">
+                    <p class="tm-copyright-text">Copyright &copy; 2016 Your Company - Design: Tooplate</p>
+                </div> 
+                    <div class="demo">
+
+  <a href="#gallery"><span></span><i class="fa fa-arrow-down"></i></a>
+</div>                    
+            </section>
+             <section class="tm-section tm-section-contact" id="gallery">
+                <div class="tm-page-content-width">
+                    <div class="tm-bg-black-translucent text-xs-left tm-textbox tm-2-col-textbox-2 tm-textbox-padding tm-textbox-padding-contact tm-content-box  tm-content-box-right">
+                        <h2 class="tm-section-title">Contact Us</h2>
+                        
+                        <!-- contact form -->
+                        <form action="index.html" method="post" class="tm-contact-form">
+
+                            <div class="form-group">
+                                <input type="text" id="contact_name" name="contact_name" class="form-control" placeholder="Your Name"  required/>
+                            </div>
+                
+                            <div class="form-group">                                                        
+                                <input type="email" id="contact_email" name="contact_email" class="form-control" placeholder="Your Email"  required/>
+                            </div>                                                        
+                            
+                            <div class="form-group">
+                                <textarea id="contact_message" name="contact_message" class="form-control" rows="5" placeholder="Message" required></textarea>
+                            </div> 
+
+                            <button type="submit" class="tm-submit-btn">Submit</button>  
+                        
+                        </form>  
+                    </div>
+                </div>
+                <div class="tm-bg-black-translucent tm-copyright-div">
+                    <p class="tm-copyright-text">Copyright &copy; 2016 Your Company - Design: Tooplate</p>
+                </div>        
+                    <div class="demo">
+
+  <a href="#sponsers"><span></span><i class="fa fa-arrow-down"></i></a>
+</div>             
+            </section>
+
+
+
+             <section class="tm-section tm-section-contact" id="sponsers">
+                <div class="tm-page-content-width">
+                    <div class="tm-bg-black-translucent text-xs-left tm-textbox tm-2-col-textbox-2 tm-textbox-padding tm-textbox-padding-contact tm-content-box  tm-content-box-right">
+                        <h2 class="tm-section-title">Contact Us</h2>
+                        
+                        <!-- contact form -->
+                        <form action="index.html" method="post" class="tm-contact-form">
+
+                            <div class="form-group">
+                                <input type="text" id="contact_name" name="contact_name" class="form-control" placeholder="Your Name"  required/>
+                            </div>
+                
+                            <div class="form-group">                                                        
+                                <input type="email" id="contact_email" name="contact_email" class="form-control" placeholder="Your Email"  required/>
+                            </div>                                                        
+                            
+                            <div class="form-group">
+                                <textarea id="contact_message" name="contact_message" class="form-control" rows="5" placeholder="Message" required></textarea>
+                            </div> 
+
+                            <button type="submit" class="tm-submit-btn">Submit</button>  
+                        
+                        </form>  
+                    </div>
+                </div>
+                <div class="tm-bg-black-translucent tm-copyright-div">
+                    <p class="tm-copyright-text">Copyright &copy; 2016 Your Company - Design: Tooplate</p>
+                </div>    
+                    <div class="demo">
+
+  <a href="#contact"><span></span><i class="fa fa-arrow-down"></i></a>
+</div>                 
+            </section>
+ <section class="tm-section tm-section-contact" id="contact">
+                <div class="tm-page-content-width">
+                    <div class="tm-bg-black-translucent text-xs-left tm-textbox tm-2-col-textbox-2 tm-textbox-padding tm-textbox-padding-contact tm-content-box  tm-content-box-right">
+                        <h2 class="tm-section-title">Contact Us</h2>
+                        
+                        <!-- contact form -->
+                        <form action="index.html" method="post" class="tm-contact-form">
+
+                            <div class="form-group">
+                                <input type="text" id="contact_name" name="contact_name" class="form-control" placeholder="Your Name"  required/>
+                            </div>
+                
+                            <div class="form-group">                                                        
+                                <input type="email" id="contact_email" name="contact_email" class="form-control" placeholder="Your Email"  required/>
+                            </div>                                                        
+                            
+                            <div class="form-group">
+                                <textarea id="contact_message" name="contact_message" class="form-control" rows="5" placeholder="Message" required></textarea>
+                            </div> 
+
+                            <button type="submit" class="tm-submit-btn">Submit</button>  
+                        
+                        </form>  
+                    </div>
+                </div>
+                <div class="tm-bg-black-translucent tm-copyright-div">
+                    <p class="tm-copyright-text">Copyright &copy; 2016 Your Company - Design: Tooplate</p>
+                </div>    
+                       
+            </section> 
+            
+        </div>
+        
+        <!-- load JS files -->
+        <script src="js/jquery-1.11.3.min.js"></script>         <!-- jQuery (https://jquery.com/download/) -->
+        <script src="https://www.atlasestateagents.co.uk/javascript/tether.min.js"></script> <!-- Tether for Bootstrap (http://stackoverflow.com/questions/34567939/how-to-fix-the-error-error-bootstrap-tooltips-require-tether-http-github-h) -->
+        <script src="js/bootstrap.min.js"></script>             <!-- Bootstrap js (v4-alpha.getbootstrap.com/) -->
+        <script src="js/jquery.singlePageNav.min.js"></script>  <!-- Single page nav (https://github.com/ChrisWojcik/single-page-nav) -->
+        
+        <script>     
+          
+            // Check scroll position and add/remove background to navbar
+            function checkScrollPosition() {
+                
+                if($(window).width() < 767) {
+                    $(".tm-nav").removeClass("scroll");
+                    return;
+                }
+
+                if($(window).scrollTop() > 50) {
+                  $(".tm-nav").addClass("scroll");
+              } else {        
+                  $(".tm-nav").removeClass("scroll");
+              }
+            }
+
+            $(document).ready(function () {   
+                // Single page nav
+                $('.tm-nav').singlePageNav({
+                    offset: 57,
+                    filter: ':not(.external)',
+                    updateHash: true        
+                });
+
+                checkScrollPosition();
+
+                // navbar
+                $('.navbar-toggle').click(function(){
+                    $('.main-menu').toggleClass('show');
+                });
+
+                $('.main-menu a').click(function(){
+                    $('.main-menu').removeClass('show');
+                });
+            });
+
+            $(window).on("scroll", function() {
+                checkScrollPosition();    
+            });
+
+            $('#tmNavbar a').click(function(){
+                $('#tmNavbar').collapse('hide');
+            });
+
+        </script>             
+
+</body>
+</html>
