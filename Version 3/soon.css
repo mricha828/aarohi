@@ -1,0 +1,107 @@
+#SVGG {
+	position: relative;
+    bottom: -185px;
+    left: 165px;
+}
+#C { stroke-dasharray: 100%; 
+	stroke-dashoffset: -100%;
+	fill: transparent;
+	stroke: black;
+	animation: anim1 .5s linear 0s forwards,
+	anim2 0.75s ease .75s forwards;
+}
+
+@keyframes anim1 {
+
+from {stroke-dashoffset: 100%;}
+
+to {stroke-dashoffset: 0%;}
+}
+@keyframes anim2{
+from {
+	fill: transparent;
+}
+to{
+	fill: inherit;
+}
+}
+
+
+#O1 { 
+	stroke-dasharray: 100%; 
+	stroke-dashoffset: -100%;
+	fill: transparent;
+	stroke: black;
+	animation: anim1 .75s linear .75s forwards,
+	 anim2 .75s linear 1.5s forwards;
+}
+
+
+
+#M { 
+	stroke-dasharray: 100%; 
+	stroke-dashoffset: -100%;
+	fill:transparent;
+	stroke: black;
+	animation: anim1 .75s linear 1.5s forwards,
+	 anim2 .75s linear 2.25s forwards;
+}
+
+
+
+
+#I { 
+	stroke-dasharray: 100%; 
+	stroke-dashoffset: -100%;
+	fill:transparent;
+	stroke: black;
+	animation: anim1 .75s linear 2.25s forwards,
+	 anim2 .75s linear 3s forwards;
+}
+
+
+
+#N1 { 
+	stroke-dasharray: 100%; 
+	stroke-dashoffset: -100%;
+	fill:transparent;
+	stroke: black;
+	animation: anim1 .75s linear 3s forwards,
+	 anim2 .75s linear 3.75s forwards;
+}
+#GS { 
+	stroke-dasharray: 100%; 
+	stroke-dashoffset: -100%;
+	fill:transparent;
+	stroke: black;
+	animation: anim1 .75s linear 3.75s forwards,
+	 anim2 .75s linear 4.5s forwards;
+	}
+
+#O2 { 
+	stroke-dasharray: 100%; 
+	stroke-dashoffset: -100%;
+	fill:transparent;
+	stroke: black;
+	animation: anim1 .75s linear 4.5s forwards,
+	 anim2 .75s linear 5.25s forwards; 
+}
+
+
+#O3{ 
+	stroke-dasharray: 100%; 
+	stroke-dashoffset: -100%;
+	fill:transparent;
+	stroke: black;
+	animation: anim1 .75s linear 5.25s forwards,
+	 anim2 .75s linear 6s forwards;
+	}
+
+#N2 { 
+	stroke-dasharray: 100%; 
+	stroke-dashoffset: -100%;
+	fill:transparent;
+	stroke: black;
+	animation: anim1 .75s linear 6s forwards,
+	 anim2 .75s linear 6.75s forwards;
+}
