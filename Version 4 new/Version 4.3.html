@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/menu.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <!-- <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
+  <link href="https://fonts.googleapis.com/css?family=Dosis:200,400" rel="stylesheet">
+  <link rel="stylesheet" href="team.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <title>Aarohi'19</title>
+  <style type="text/css">
+    /* CORE STYLES */
+:root {
+  --primary-color: rgba(13, 110, 139, 0.75);
+  --overlay-color: rgba(24, 39, 51 , 0.85);
+  --menu-speed: 0.75s;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html{
+	scroll-behavior: smooth;
+}
+body {
+  font-family: 'Roboto';
+  line-height: 1.4;
+}
+.mySlides {display:none;}
+.container {
+  max-width: 960px;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 3rem;
+}
+
+.showcase {
+  height: 100vh;
+  position: relative;
+}
+
+.showcase:before {
+  content: '';
+  background: url(img/brickwall.jpg) no-repeat center center/cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.showcase .showcase-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+}
+
+.showcase h1 {
+  font-size: 4rem;
+}
+
+.showcase p {
+  font-size: 1.3rem;
+}
+
+.btn {
+  display: inline-block;
+  border: none;
+  background: var(--primary-color);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  margin-top: 1rem;
+  transition: opacity 1s ease-in-out;
+  text-decoration: none;
+}
+
+.btn:hover {
+  opacity: 0.7;
+}
+
+/* MENU STYLES */
+.menu-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.menu-wrap .toggler {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  opacity: 0;
+}
+
+.menu-wrap .hamburger {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 60px;
+  height: 60px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hamburger Line */
+.menu-wrap .hamburger > div {
+  position: relative;
+  flex: none;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+}
+
+/* Hamburger Lines - Top & Bottom */
+.menu-wrap .hamburger > div::before,
+.menu-wrap .hamburger > div::after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  top: -10px;
+  width: 100%;
+  height: 2px;
+  background: inherit;
+}
+
+/* Moves Line Down */
+.menu-wrap .hamburger > div::after {
+  top: 10px;
+}
+
+/* Toggler Animation */
+.menu-wrap .toggler:checked + .hamburger > div {
+  transform: rotate(135deg);
+}
+
+/* Turns Lines Into X */
+.menu-wrap .toggler:checked + .hamburger > div:before,
+.menu-wrap .toggler:checked + .hamburger > div:after {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+/* Rotate On Hover When Checked */
+.menu-wrap .toggler:checked:hover + .hamburger > div {
+  transform: rotate(225deg);
+}
+
+/* Show Menu */
+.menu-wrap .toggler:checked ~ .menu {
+  visibility: visible;
+}
+
+.menu-wrap .toggler:checked ~ .menu > div {
+  transform: scale(1);
+  transition-duration: var(--menu-speed);
+}
+
+.menu-wrap .toggler:checked ~ .menu > div > div {
+  opacity: 1;
+  transition:  opacity 0.4s ease 0.4s;
+}
+
+.menu-wrap .menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-wrap .menu > div {
+  background: var(--overlay-color);
+  border-radius: 50%;
+  width: 200vw;
+  height: 200vw;
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0);
+  transition: all 0.4s ease;
+}
+
+.menu-wrap .menu > div > div {
+  text-align: center;
+  max-width: 90vw;
+  max-height: 100vh;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.menu-wrap .menu > div > div > ul > li {
+  list-style: none;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+
+.menu-wrap .menu > div > div > ul > li > a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.4s ease;
+}
+/*Neon LIGHT ANIMATION*/
+
+h1.neon-heading {
+                color: #fff;
+                font-family: 'Dosis', Calibri, sans-serif;
+                text-transform: uppercase;
+                font-size: 700%;
+                font-weight: 200;
+                text-align: center;
+            }
+            h1.neon-heading.first {
+                text-shadow: 0px 0px 10px #9D00FF,
+                    0px 0px 20px #9D00FF,
+                    0px 0px 30px #9D00FF,
+                    0px 0px 40px #9D00FF,
+                    0px 0px 50px #9D00FF,
+                    0px 0px 60px #9D00FF;
+            }
+            h1.neon-heading.second {
+                text-shadow: 0px 0px 10px #33FF00,
+                    0px 0px 20px #33FF00,
+                    0px 0px 30px #33FF00,
+                    0px 0px 40px #33FF00,
+                    0px 0px 50px #33FF00,
+                    0px 0px 60px #33FF00;
+                animation: pulsating 3s infinite;
+                font-size: 300%;
+            }
+            
+            /* FLICKERING */
+            span.flickering-1 {
+                animation: flickering-1 6s infinite;
+            }
+            span.flickering-2 {
+                animation: flickering-2 3s infinite;
+            }
+            span.flickering-3 {
+                animation: flickering-3 5s infinite;
+            }
+            
+            /* ANIMATIONS */
+            @keyframes pulsating {
+                0% {
+                    text-shadow: 0px 0px 0px;
+                    opacity: 0;
+                }
+                50% {
+                    text-shadow: 0px 0px 10px #33FF00,
+                        0px 0px 20px #33FF00,
+                        0px 0px 30px #33FF00,
+                        0px 0px 40px #33FF00,
+                        0px 0px 50px #33FF00,
+                        0px 0px 60px #33FF00;
+                    opacity: 1;
+                }
+                100% {
+                    text-shadow: 0px 0px 0px;
+                    opacity: 0;
+                }
+            }
+            
+            @keyframes flickering-1 {
+                0% { opacity: 1; }
+                52% { opacity: 1; }
+                55% { opacity: 0; }
+                56% { opacity: 1; }
+                100% { opacity: 1; }
+            }
+            
+            @keyframes flickering-2 {
+                0% { opacity: 1; }
+                62% { opacity: 1; }
+                65% { opacity: 0; }
+                66% { opacity: 1; }
+                69% { opacity: 0; }
+                70% { opacity: 1; }
+                73% { opacity: 0; }
+                74% { opacity: 1; }
+                100% { opacity: 1; }
+            }
+            
+            @keyframes flickering-3 {
+                0% { opacity: 1; }
+                82% { opacity: 1; }
+                84% { opacity: 0; }
+                85% { opacity: 1; }
+                87% { opacity: 0; }
+                88% { opacity: 1; }
+                90% { opacity: 0; }
+                91% { opacity: 1; }
+                100% { opacity: 1; }
+            }
+            
+            
+            
+	/*SECTION CSS*/
+  .about-us {
+    font-family: "Josefin Slab", "Lato";
+    /* text-transform: uppercase; */
+    /* font-weight: bold; */
+    font-size: 1.5em;
+    color: white;
+    padding: 4%;
+    line-height: 30px;
+    overflow-y: initial !important;
+}
+    
+  .about-image {
+ background: url(img/purple.jpg) no-repeat center center/cover;
+  background-color: #cccccc;
+  height:100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}        
+	#about {
+		background: url(img/Purple.jpg) no-repeat center center/cover;
+    height: 100%;
+	}
+
+	#previous {
+	background-color: #BF6D3E;
+	height: 100%;
+	}
+
+	#social {
+		background-color: #56C48D;
+		height: 100%;
+	}
+	
+	#CN {
+		background-color: #BF6D3E;
+		height: 100%;
+	}            
+    
+    #events {
+    	background-color: #56C48D;
+		height: 100%;
+    }        
+    
+    #gallery {
+    	background-color: #BF6D3E;
+		height: 100%;
+    }        
+
+    #sponsor {
+    	background-color: #56C48D;
+		height: 100%;
+    }
+    #contact {
+    	background-color: #BF6D3E;
+		height: 100%;
+    }
+/*-----------------------------------HOBO SPIN--------------------------------------------------------------------------------*/
+@keyframes spin {
+  from{
+    transform: rotateY(0deg);
+    moz-transform: rotateY(0deg); //Firefox
+    ms-transform: rotateY(0deg); //Microsoft Browsers
+  }
+  to{
+    transform: rotateY(360deg);
+    moz-transform: rotateY(360deg); //Firefox
+    ms-transform: rotateY(360deg); //Microsoft Browsers
+  }
+}
+@-webkit-keyframes spin{
+  from{-webkit-transform: rotateY(0deg);}
+  to{-webkit-transform: rotateY(360deg);}
+}
+.imageSpin{
+  animation-name: spin;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 5s;
+  -webkit-animation-name: spin;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-duration: 5s;
+  width: 200px;
+  height: 200px;
+}
+ /*----------------------------------------SCROLL CSS ------------------------------------------------------------------------*/
+   .sss {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.sss::after {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 80%;
+  background: -webkit-linear-gradient(top,rgba(0,0,0,0) 0,rgba(0,0,0,.8) 80%,rgba(0,0,0,.8) 100%);
+  background: linear-gradient(to bottom,rgba(0,0,0,0) 0,rgba(0,0,0,.8) 80%,rgba(0,0,0,.8) 100%);
+}
+
+.scroll a {
+  position: absolute;
+  bottom: 12%;
+  left: 50%;
+  z-index: 2;
+  display: inline-block;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  color: #fff;
+  font : normal 400 20px/1 'Josefin Sans', sans-serif;
+  letter-spacing: .1em;
+  text-decoration: none;
+  transition: opacity .3s;
+}
+.scroll a:hover {
+  opacity: .5;
+}
+
+#home .homes span {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  margin-left: -12px;
+  border-left: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  -webkit-transform: rotateZ(-45deg);
+  transform: rotateZ(-45deg);
+  -webkit-animation: sdb06 1.5s infinite;
+  animation: sdb06 1.5s infinite;
+  /*box-sizing: border-box;*/
+}
+
+.scroll2 a {
+  position: absolute;
+  bottom: -90%;
+  left: 50%;
+  z-index: 2;
+  display: inline-block;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  color: #fff;
+  font : normal 400 20px/1 'Josefin Sans', sans-serif;
+  letter-spacing: .1em;
+  text-decoration: none;
+  transition: opacity .3s;
+}
+.scroll2 a:hover {
+  opacity: .5;
+}
+
+#about .homes2 span {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  margin-left: -12px;
+  border-left: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  -webkit-transform: rotateZ(-45deg);
+  transform: rotateZ(-45deg);
+  -webkit-animation: sdb06 1.5s infinite;
+  animation: sdb06 1.5s infinite;
+  /*box-sizing: border-box;*/
+}
+
+.scroll3 a {
+  position: absolute;
+  bottom: -180%;
+  left: 50%;
+  z-index: 2;
+  display: inline-block;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  color: #fff;
+  font : normal 400 20px/1 'Josefin Sans', sans-serif;
+  letter-spacing: .1em;
+  text-decoration: none;
+  transition: opacity .3s;
+}
+.scroll3 a:hover {
+  opacity: .5;
+}
+
+#previous .homes3 span {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  margin-left: -12px;
+  border-left: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  -webkit-transform: rotateZ(-45deg);
+  transform: rotateZ(-45deg);
+  -webkit-animation: sdb06 1.5s infinite;
+  animation: sdb06 1.5s infinite;
+  /*box-sizing: border-box;*/
+}
+
+.scroll4 a {
+  position: absolute;
+  bottom: -290%;
+  left: 50%;
+  z-index: 2;
+  display: inline-block;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  color: #fff;
+  font : normal 400 20px/1 'Josefin Sans', sans-serif;
+  letter-spacing: .1em;
+  text-decoration: none;
+  transition: opacity .3s;
+}
+.scroll4 a:hover {
+  opacity: .5;
+}
+
+#social .homes4 span {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  margin-left: -12px;
+  border-left: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  -webkit-transform: rotateZ(-45deg);
+  transform: rotateZ(-45deg);
+  -webkit-animation: sdb06 1.5s infinite;
+  animation: sdb06 1.5s infinite;
+  /*box-sizing: border-box;*/
+}
+
+.scroll5 a {
+  position: absolute;
+  bottom: -390%;
+  left: 50%;
+  z-index: 2;
+  display: inline-block;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  color: #fff;
+  font : normal 400 20px/1 'Josefin Sans', sans-serif;
+  letter-spacing: .1em;
+  text-decoration: none;
+  transition: opacity .3s;
+}
+.scroll5 a:hover {
+  opacity: .5;
+}
+
+#CN .homes5 span {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  margin-left: -12px;
+  border-left: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  -webkit-transform: rotateZ(-45deg);
+  transform: rotateZ(-45deg);
+  -webkit-animation: sdb06 1.5s infinite;
+  animation: sdb06 1.5s infinite;
+  /*box-sizing: border-box;*/
+}
+
+.scroll6 a {
+  position: absolute;
+  bottom: -490%;
+  left: 50%;
+  z-index: 2;
+  display: inline-block;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  color: #fff;
+  font : normal 400 20px/1 'Josefin Sans', sans-serif;
+  letter-spacing: .1em;
+  text-decoration: none;
+  transition: opacity .3s;
+}
+.scroll6 a:hover {
+  opacity: .5;
+}
+
+#events .homes6 span {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  margin-left: -12px;
+  border-left: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  -webkit-transform: rotateZ(-45deg);
+  transform: rotateZ(-45deg);
+  -webkit-animation: sdb06 1.5s infinite;
+  animation: sdb06 1.5s infinite;
+  /*box-sizing: border-box;*/
+}
+
+
+.scroll7 a {
+  position: absolute;
+  bottom: -590%;
+  left: 50%;
+  z-index: 2;
+  display: inline-block;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  color: #fff;
+  font : normal 400 20px/1 'Josefin Sans', sans-serif;
+  letter-spacing: .1em;
+  text-decoration: none;
+  transition: opacity .3s;
+}
+.scroll7 a:hover {
+  opacity: .5;
+}
+
+#gallery .homes7 span {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  margin-left: -12px;
+  border-left: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  -webkit-transform: rotateZ(-45deg);
+  transform: rotateZ(-45deg);
+  -webkit-animation: sdb06 1.5s infinite;
+  animation: sdb06 1.5s infinite;
+  /*box-sizing: border-box;*/
+}
+
+
+
+.scroll8 a {
+  position: absolute;
+  bottom: -690%;
+  left: 50%;
+  z-index: 2;
+  display: inline-block;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  color: #fff;
+  font : normal 400 20px/1 'Josefin Sans', sans-serif;
+  letter-spacing: .1em;
+  text-decoration: none;
+  transition: opacity .3s;
+}
+.scroll8 a:hover {
+  opacity: .5;
+}
+
+#sponsor .homes8 span {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  margin-left: -12px;
+  border-left: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  -webkit-transform: rotateZ(-45deg);
+  transform: rotateZ(-45deg);
+  -webkit-animation: sdb06 1.5s infinite;
+  animation: sdb06 1.5s infinite;
+  /*box-sizing: border-box;*/
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*--------------------------------SCROLL ANIMATION-----------------------------------------------------------------------------*/
+
+    @-webkit-keyframes sdb06 {
+  0% {
+    -webkit-transform: rotateY(0) rotateZ(-45deg) translate(0, 0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: rotateY(720deg) rotateZ(-45deg) translate(-20px, 20px);
+    opacity: 0;
+  }
+}
+@keyframes sdb06 {
+  0% {
+    transform: rotateY(0) rotateZ(-45deg) translate(0, 0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotateY(720deg) rotateZ(-45deg) translate(-20px, 20px);
+    opacity: 0;
+  }
+}
+
+/*------------------------------------------------------------------------SLIDER CSS-----------------------------------------------*/
+.css-slider-wrapper {
+      display: block;
+      background: #FFF;
+      overflow: hidden;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 200%;
+      bottom: -200%;
+  }
+  /* Slider */
+  .slider {
+      width: 100%;
+      height: 100%;
+      background: red;
+      position: absolute;
+      left: 0;
+      top: 0;
+      opacity: 1;
+      z-index: 0;
+      
+      display: flex;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      flex-direction: row;
+      flex-wrap: wrap;
+      -webkit-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+      justify-content: center;
+      align-content: center;
+      
+      -webkit-transition: -webkit-transform 1600ms;
+      transition: -webkit-transform 1600ms, transform 1600ms;
+      -webkit-transform: scale(1);
+      transform: scale(1);
+      }
+  /* each slide background color */ 
+  .slide1 {
+      background: #00bcd7;
+      background-image: url("imgs/1.jpg");
+      left: 0;
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      
+  }
+  .slide2 {
+      background: #009788;
+      background-image: url("imgs/2.jpg") ;
+      background-repeat: no-repeat;
+      background-size: 100% 100%  ;
+
+      left: 100%
+  }
+  .slide3 {
+      background: #ff5608;
+      background-image: url("imgs/3.jpg");
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      left: 200%
+  }
+  .slide4 {
+      background: #607d8d;
+      background-image: url("imgs/4.jpg");
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      left: 300%;
+  }
+  .slider > div {
+    text-align: center;
+  }
+  /* Slider inner content */
+  .slider h2 {
+      color: #FFF;
+      font-weight: 900;
+      text-transform: uppercase;
+      font-size: 45px;
+      line-height: 120%;
+      opacity: 0;
+      -webkit-transform: translateX(500px);
+      transform: translateX(500px);
+  }
+  .slider .button {
+      color: #FFF;
+      padding: 5px 50px;
+      background: rgba(255,255,255,0.3);
+      text-decoration: none;
+      opacity: 0;
+      font-size: 15px;
+      line-height: 30px;
+      display: inline-block;
+      -webkit-transform: translateX(-500px);
+      transform: translateX(-500px);
+  }
+  .slider h2, .slider .button {
+      -webkit-transition: opacity 800ms, -webkit-transform 800ms;
+      transition: transform 800ms, opacity 800ms;
+      -webkit-transition-delay: 1s; /* Safari */
+      transition-delay: 1s;
+  }
+  /* Next and previous button */ 
+  .control {
+      position: absolute;
+      top: 50%;
+      width: 50px;
+      height: 50px;
+      margin-top: -25px;
+      z-index: 55;
+  }
+  .control label {
+      z-index: 0;
+      display: none;
+      text-align: center;
+      line-height: 50px;
+      font-size: 50px;
+      color: #FFF;
+      cursor: pointer;
+      opacity: 0.2;
+  }
+  .control label:hover {
+     opacity: 0.5;
+  }
+  .next {
+    right: 1%;
+  }
+  .previous {
+    left: 1%;
+  }
+  
+  /* Slider pagination */ 
+  .slider-pagination {
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+      left: 0;
+      text-align: center;
+      z-index: 1000;
+  }
+  .slider-pagination label {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      margin: 0 2px;
+      border: solid 1px rgba(255,255,255,0.4);
+      cursor: pointer;
+      }
+      
+  /* Slider control active css */
+  .slide-radio1:checked ~ .next .numb2, 
+  .slide-radio2:checked ~ .next .numb3, 
+  .slide-radio3:checked ~ .next .numb4, 
+  .slide-radio2:checked ~ .previous .numb1, 
+  .slide-radio3:checked ~ .previous .numb2, 
+  .slide-radio4:checked ~ .previous .numb3 {
+      display: block;
+      z-index: 1
+  }
+  /* Slider pagination active css */
+  .slide-radio1:checked ~ .slider-pagination .page1, 
+  .slide-radio2:checked ~ .slider-pagination .page2, 
+  .slide-radio3:checked ~ .slider-pagination .page3, 
+  .slide-radio4:checked ~ .slider-pagination .page4 {
+      background: rgba(255,255,255,1)
+  }
+  
+  /* css for sliding  effect when you click on control button*/
+  .slide-radio1:checked ~ .slider {
+      -webkit-transform: translateX(0%);
+      transform: translateX(0%);
+  }
+  .slide-radio2:checked ~ .slider {
+      -webkit-transform: translateX(-100%);
+      transform: translateX(-100%);
+  }
+  .slide-radio3:checked ~ .slider {
+      -webkit-transform: translateX(-200%);
+      transform: translateX(-200%);
+  }
+  .slide-radio4:checked ~ .slider {
+      -webkit-transform: translateX(-300%);
+      transform: translateX(-300%);
+  }
+  
+  .slide-radio1:checked ~ .slide1 h2, 
+  .slide-radio2:checked ~ .slide2 h2, 
+  .slide-radio3:checked ~ .slide3 h2, 
+  .slide-radio4:checked ~ .slide4 h2, 
+  .slide-radio1:checked ~ .slide1 .button, 
+  .slide-radio2:checked ~ .slide2 .button, 
+  .slide-radio3:checked ~ .slide3 .button, 
+  .slide-radio4:checked ~ .slide4 .button {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+      opacity: 1
+  }
+  
+@media only screen and (max-width: 767px) {
+  .slider h2 {
+      font-size: 20px;
+  }
+  .slider > div {
+      padding: 0 2%
+  }
+  .control label {
+      font-size: 35px;
+  }
+  .slider .button {
+      padding: 0 30px;
+  }
+  }
+
+
+
+  </style>
+<script
+  src="http://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+        <!-- <script src="js/jquery-1.11.3.min.js"></script> -->         <!-- jQuery (https://jquery.com/download/) -->
+        <script src="https://www.atlasestateagents.co.uk/javascript/tether.min.js"></script> <!-- Tether for Bootstrap (http://stackoverflow.com/questions/34567939/how-to-fix-the-error-error-bootstrap-tooltips-require-tether-http-github-h) -->
+        <script src="js/bootstrap.min.js"></script>             <!-- Bootstrap js (v4-alpha.getbootstrap.com/) -->
+        <script src="js/jquery.singlePageNav.min.js"></script>  <!-- Single page nav (https://github.com/ChrisWojcik/single-page-nav) -->
+
+
+
+
+<script type="text/javascript">
+	var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+  <div class="menu-wrap">
+    <input type="checkbox" class="toggler">
+    <div class="hamburger"><div></div></div>
+    <div class="menu">
+      <div>
+        <div>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#previous">Previous Years</a></li>
+            <li><a href="#social">Social Initiatives</a></li>
+            <li><a href="#CN">CN</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#sponsor">Sponsors</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <header class="showcase">
+    <div id="home" class="container showcase-inner">
+    <section>
+    	<!-- <div style="text-align: center;" class="center">
+	<img class="imageSpin" src="hobofinal/hobo1.png">
+</div>          -->
+      <div class="Neonn">
+        <h1 class="neon-heading first"><span class="flickering-3">A</span>A<span class="flickering-1">R</span>O<span class="flickering-3">HI</span> <span class="flickering-2">'</span>1<span class="flickering-3">9</span></h1>
+        <h1 class="neon-heading second">COMING SOON</h1>
+      </div>
+    </div>
+    <div id="home" class="scroll">
+     <a href="#about" class="homes"><span></span></a>
+   </div>
+</section>
+<section id="about" class="scroll2">
+   <div id="about" class="scroll2">
+    <h2 style="text-align:center; padding-top: 65px; font-weight:bold; color:#ffffff">ABOUT AAROHI</h2>
+       <p class="about-us">Come winter, the gates to Central India&#39;s Largest Cultural Festival are opened ushering in an
+unprecedented medley of excitement and zeal. The Cultural Extravaganza, studded with electrifying and
+exhilarating events and competitions, witnesses a whooping footfall and participation. Conceptualized
+way back in 1988, Aarohi has come a long way in all realms both qualitatively and quantitatively and has
+firmly ensconced itself as the centerpiece of the cultural spectrum of the region. Aarohi is a Non-Profit
+organization completely organized and coordinated by the willingness and true spirits of a group of
+VNITians. Aarohi has truly become one of the most awaited festivals in India. This year we will be
+celebrating 32nd edition of Aarohi at VNIT, Nagpur.</p>
+
+      <a href="https://www.youtube.com/user/VNITAarohi"><img src="img/youtube.png" ></a>
+     <a href="#previous" class="homes2"><span></span></a>
+   </div>
+</section>
+<section id="previous" class="scroll3">
+  <div id="previous" class="scroll3">
+  	<div class="css-slider-wrapper">
+    
+    <input type="radio" name="slider" class="slide-radio1" checked id="slider_1">
+    <input type="radio" name="slider" class="slide-radio2" id="slider_2">
+    <input type="radio" name="slider" class="slide-radio3" id="slider_3">
+    <input type="radio" name="slider" class="slide-radio4" id="slider_4">
+    
+    
+    <div class="slider-pagination">
+        
+        <label for="slider_1" class="page1"></label> 
+        <label for="slider_2" class="page2"></label>
+        <label for="slider_3" class="page3"></label>
+        <label for="slider_4" class="page4"></label>
+    </div>
+    
+    <div class="next control">
+        <label for="slider_1" class="numb1"><i class="fa fa-arrow-circle-right"></i></label>
+        <label for="slider_2" class="numb2"><i class="fa fa-arrow-circle-right"></i></label>
+        <label for="slider_3" class="numb3"><i class="fa fa-arrow-circle-right"></i></label>
+        <label for="slider_4" class="numb4"><i class="fa fa-arrow-circle-right"></i></label>
+    </div>
+    <div class="previous control">
+        <label for="slider_1" class="numb1"><i class="fa fa-arrow-circle-left"></i></label>
+        <label for="slider_2" class="numb2"><i class="fa fa-arrow-circle-left"></i></label>
+        <label for="slider_3" class="numb3"><i class="fa fa-arrow-circle-left"></i></label>
+        <label for="slider_4" class="numb4"><i class="fa fa-arrow-circle-left"></i></label>
+    </div>
+    
+    
+    <div class="slider slide1">
+        <div>
+            <h2>DANNY!!!!</h2>
+            <p style="bottom: 14%;color: white;left: 2%; position: absolute;">Daniel Fernandes, a stand-up comedian based in Mumbai known for his dark and surreal style of comedy took over the stage of Aarohi’17 and entertained the audience with his trademark witty observations.</p>
+        </div>
+    </div>
+    <div class="slider slide2">
+        <div>
+            <h2>EUPHORIA</h2>
+           <p style="
+    bottom: 14%;
+    color: white;
+    left: 2%;
+    position: absolute;
+">Euphoria's melody has mesmerized people and has deservingly acclaimed the reputation of being the most popular band in India </p>
+        </div>
+    </div>
+    <div class="slider slide3">
+        <div>
+            <h2>Zakir</h2>
+            <p style="
+    bottom: 14%;
+    color: white;
+    left: 2%;
+    position: absolute;
+">Zakir Khan is a well-known Indian Stand-up Comedian, writer, poet, and presenter based in Indore. His original and relatable witty one liners had audience laughing throughout the show.</p>
+        </div>
+    </div>
+    <div class="slider slide4">
+        <div>
+            <h2>KENNY</h2>
+            <p style="
+    bottom: 14%;
+    color: white;
+    left: 2%;
+    position: absolute;
+">Kenny Sebastian, a standup comedian based in Bangalore, tickled the funny bone leaving the audience gasping for breath during Aarohi’16</p>
+        </div>
+    </div>
+</div>
+
+     <a href="#social" class="homes3"><span></span></a>
+   </div>
+</section>
+
+
+
+
+
+<section id="social" class="scroll4">
+  <div id="social" class="scroll4">
+     <a href="#CN" class="homes4"><span></span></a>
+   </div>
+</section>
+<section id="CN" class="scroll5">
+  <div id="CN" class="scroll5">
+     <a href="#events" class="homes5"><span></span></a>
+   </div>
+</section>
+<section id="events" class="scroll6">
+  <div id="events" class="scroll6">
+     <a href="#gallery" class="homes6"><span></span></a>
+   </div>
+</section>
+<section id="gallery" class="scroll7">
+  <div id="gallery" class="scroll7">
+     <a href="#sponsor" class="homes7"><span></span></a>
+   </div>
+</section>
+<section id="sponsor" class="scroll8">
+  <div id="sponsor" class="scroll8">
+     <a href="#contact" class="homes8"><span></span></a>
+   </div>
+</section>
+<section id="contact">
+ <div class="team-section">
+    <div class="inner-width">
+      <h1>Core Team</h1>
+      <div class="pers">
+
+
+        <div class="pe">
+          <img src="t/Tushar.jpg" alt="">
+          <div class="p-name">Tushar Kakkar</div>
+          <div class="p-des">Vice President</div>
+          <div class="p-sm">
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+
+        <div class="pe">
+          <img src="img/" alt="">
+          <div class="p-name">Shounak Zulkanthiwar</div>
+          <div class="p-des">President</div>
+          <div class="p-sm">
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+
+        <div class="pe">
+          <img src="img/" alt="">
+          <div class="p-name">Pravin Hatti</div>
+          <div class="p-des">Treasurer</div>
+          <div class="p-sm">
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+  <hr style="height:1px;border:none;color:#333;background-color:#333; margin: 0" />
+ <div class="team-section">
+    <div class="inner-width">
+      <div class="pers">
+        <div class="pe">
+          <img src="img/" alt="">
+          <div class="p-name">Richa Mishra</div>
+          <div class="p-des">Web Developer</div>
+          <div class="p-sm">
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+
+        <div class="pe">
+          <img src="img/" alt="">
+          <div class="p-name">Sadneya Pusalkar</div>
+          <div class="p-des">Web Developer</div>
+          <div class="p-sm">
+           <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+
+        <div class="pe">
+          <img src="t/Sharvil.jpg" alt="">
+          <div class="p-name">Sharvil Shastri</div>
+          <div class="p-des">Web Developer</div>
+          <div class="p-sm">
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="pe">
+          <img src="t/Anushka.jpg" alt="">
+          <div class="p-name">Anushka Kulkarni</div>
+          <div class="p-des">Web Developer</div>
+          <div class="p-sm">
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="pe">
+          <img src="img/" alt="">
+          <div class="p-name">Shalaka Patankar</div>
+          <div class="p-des">Web Developer</div>
+          <div class="p-sm">
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+  </header>
+</body>
+</html>
