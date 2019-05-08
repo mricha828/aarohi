@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link href='https://fonts.googleapis.com/css?family=Allan' rel='stylesheet'>
   <!-- <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
   <link href="https://fonts.googleapis.com/css?family=Dosis:200,400" rel="stylesheet">
   <link rel="stylesheet" href="team.css">
@@ -18,17 +20,181 @@
   <title>Aarohi'19</title>
   <style type="text/css">
     /* CORE STYLES */
-:root {
-  --primary-color: rgba(13, 110, 139, 0.75);
-  --overlay-color: rgba(24, 39, 51 , 0.85);
-  --menu-speed: 0.75s;
-}
-
-* {
+    * {
   margin: 0;
   padding: 0;
+  border: 0;
   box-sizing: border-box;
 }
+/*body and container*/
+* {
+	margin: 0;
+	padding: 0;
+	
+}
+
+body {
+	background: url('dark_geometric.png');
+}
+
+#containers {
+		width:100%;
+		height:90%;
+			overflow: hidden;
+	
+	
+}
+
+
+.photobanner {
+	
+	 height: 100%;
+	width: 100%;
+	margin-bottom: 80px;
+
+
+}
+
+.photobanner img {
+	padding: 10px 10px 25px 10px;
+	background: #eee;
+	border: 1px solid #fff;
+	height: 520px;
+	width: 520px;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	-ms-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+
+.photobanner img:hover {
+	-webkit-transform: scale(1.1);
+	-moz-transform: scale(1.1);
+	-o-transform: scale(1.1);
+	-ms-transform: scale(1.1);
+	transform: scale(1.1);
+	cursor: pointer;
+
+	-webkit-box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
+	box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
+}
+
+
+/*keyframe animations*/
+.firsts {
+	-webkit-animation: bannermove 30s linear infinite;
+	-moz-animation: bannermove  30s linear infinite;
+	-ms-animation: bannermove  30s linear infinite;
+	animation: bannermove 30s linear infinite;
+}
+
+@keyframes "bannermove" {
+ 0% {
+    margin-left: 0px;
+ }
+ 100% {
+    margin-left: -2125px;
+ }
+
+}
+
+@-moz-keyframes bannermove {
+ 0% {
+   margin-left: 0px;
+ }
+ 100% {
+   margin-left: -2125px;
+ }
+
+}
+
+@-webkit-keyframes "bannermove" {
+ 0% {
+   margin-left: 0px;
+ }
+ 100% {
+   margin-left: -2125px;
+ }
+
+}
+
+@-ms-keyframes "bannermove" {
+ 0% {
+   margin-left: 0px;
+ }
+ 100% {
+   margin-left: -2125px;
+ }
+
+}
+
+@-o-keyframes "bannermove" {
+ 0% {
+   margin-left: 0px;
+ }
+ 100% {
+   margin-left: -2125px;
+ }
+
+}
+
+
+
+ul.gallery { 
+	
+
+	list-style: none;
+
+}
+ul.gallery li a {
+	
+
+	padding: 10px 10px 25px 10px;
+	background: #eee;
+	border: 1px solid #fff;
+	-moz-box-shadow: 0px 2px 15px #333;
+}
+	
+	pic-1 {
+		
+		z-index: 1;
+		-webkit-transform: rotate(-10deg);
+ 		-moz-transform: rotate(-10deg);
+	}
+	pic-2 {
+		z-index: 5;
+		-webkit-transform: rotate(-3deg);
+ 		-moz-transform: rotate(-3deg);
+	}
+	pic-3 {
+		z-index: 3;
+		-webkit-transform: rotate(4deg);
+ 		-moz-transform: rotate(4deg);
+	}
+	pic-4 {
+		z-index: 4;
+		-webkit-transform: rotate(14deg);
+ 		-moz-transform: rotate(14deg);
+	}
+	pic-5 {
+		z-index: 1;
+		-webkit-transform: rotate(19deg);
+ 		-moz-transform: rotate(19deg);
+	}
+	pic-6 {
+		z-index: 5;
+		-webkit-transform: rotate(15deg);
+ 		-moz-transform: rotate(15deg);
+	}
+	
+	ul.gallery li a:hover {
+		z-index: 10;
+		-moz-box-shadow: 3px 5px 15px #333;
+	}
+
+
 html{
 	scroll-behavior: smooth;
 }
@@ -640,7 +806,7 @@ h1.neon-heading {
 .scroll7 a {
   position: absolute;
   bottom: -590%;
-  left: 50%;
+  left:50%;
   z-index: 2;
   display: inline-block;
   -webkit-transform: translate(0, -50%);
@@ -819,6 +985,160 @@ h1.neon-heading {
       background-position: center;
       
   }
+
+
+
+
+.photobanner {
+	height: 233px;
+	width: 3550px;
+	margin-bottom: 80px;
+}
+
+.photobanner img {
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	-ms-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+
+.photobanner img:hover {
+	-webkit-transform: scale(1.1);
+	-moz-transform: scale(1.1);
+	-o-transform: scale(1.1);
+	-ms-transform: scale(1.1);
+	transform: scale(1.1);
+	cursor: pointer;
+
+	-webkit-box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
+	box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
+}
+
+
+/*keyframe animations*/
+.firsts {
+	-webkit-animation: bannermove 30s linear infinite;
+	-moz-animation: bannermove  30s linear infinite;
+	-ms-animation: bannermove  30s linear infinite;
+	animation: bannermove 30s linear infinite;
+}
+
+@keyframes "bannermove" {
+ 0% {
+    margin-left: 0px;
+ }
+ 100% {
+    margin-left: -2125px;
+ }
+
+}
+
+@-moz-keyframes bannermove {
+ 0% {
+   margin-left: 0px;
+ }
+ 100% {
+   margin-left: -2125px;
+ }
+
+}
+
+@-webkit-keyframes "bannermove" {
+ 0% {
+   margin-left: 0px;
+ }
+ 100% {
+   margin-left: -2125px;
+ }
+
+}
+
+@-ms-keyframes "bannermove" {
+ 0% {
+   margin-left: 0px;
+ }
+ 100% {
+   margin-left: -2125px;
+ }
+
+}
+
+@-o-keyframes "bannermove" {
+ 0% {
+   margin-left: 0px;
+ }
+ 100% {
+   margin-left: -2125px;
+ }
+
+}
+
+
+ul.gallery { 
+	
+
+	list-style: none;
+
+}
+ul.gallery li a {
+	position: relative;
+	float: left;
+
+	padding: 10px 10px 25px 10px;
+	background: #eee;
+	border: 1px solid #fff;
+	-moz-box-shadow: 0px 2px 15px #333;
+}
+	
+	ul.gallery li a.pic-1 {
+		float: left;
+		z-index: 1;
+		-webkit-transform: rotate(-10deg);
+ 		-moz-transform: rotate(-10deg);
+	}
+	ul.gallery li a.pic-2 {
+		z-index: 5;
+		-webkit-transform: rotate(-3deg);
+ 		-moz-transform: rotate(-3deg);
+	}
+	ul.gallery li a.pic-3 {
+		z-index: 3;
+		-webkit-transform: rotate(4deg);
+ 		-moz-transform: rotate(4deg);
+	}
+	ul.gallery li a.pic-4 {
+		z-index: 4;
+		-webkit-transform: rotate(14deg);
+ 		-moz-transform: rotate(14deg);
+	}
+	ul.gallery li a.pic-5 {
+		z-index: 2;
+		-webkit-transform: rotate(-12deg);
+ 		-moz-transform: rotate(-12deg);
+	}
+	ul.gallery li a.pic-6 {
+		z-index: 6;
+		-webkit-transform: rotate(5deg);
+ 		-moz-transform: rotate(5deg);
+	}
+	ul.gallery li a.pic-7 {
+		z-index: 6;
+		-webkit-transform: rotate(5deg);
+ 		-moz-transform: rotate(5deg);
+	}
+	ul.gallery li a.pic-8 {
+		z-index: 6;
+		-webkit-transform: rotate(5deg);
+ 		-moz-transform: rotate(5deg);
+	}
+	
+	ul.gallery li a:hover {
+		z-index: 10;
+		-moz-box-shadow: 3px 5px 15px #333;
+	}
+
  .slide2 {
       background: black;
       background-image: url("fimg/Euphoria.jpg") ;
@@ -965,7 +1285,6 @@ h1.neon-heading {
       display: block;
       z-index: 1
   }
-  
   /* Slider pagination active css */
   .slide-radio1:checked ~ .slider-pagination .page1, 
   .slide-radio2:checked ~ .slider-pagination .page2, 
@@ -976,7 +1295,7 @@ h1.neon-heading {
    {
       background: rgba(255,255,255,1)
   }
- 
+  
   /* css for sliding  effect when you click on control button*/
   .slide-radio1:checked ~ .slider {
       -webkit-transform: translateX(0%);
@@ -1022,7 +1341,6 @@ h1.neon-heading {
       opacity: 1
   }
   
-  
 @media only screen and (max-width: 767px) {
   .slider h2 {
      
@@ -1036,180 +1354,110 @@ h1.neon-heading {
   .slider .button {
       padding: 0 30px;
   }
-  }
-
- /*---------------------------Social initiatives-------------------------slider4--------------------------*/
-.css-slider-wrapper4 {
-      display: block;
-      background: #FFF;
-      overflow: hidden;
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 300%;
-      bottom: -300%;
-  }
-
-.slider4 {
-      width: 100%;
-      height: 100%;
-      background: red;
-      position: absolute;
-      left: 0;
-      top: 0;
-      opacity: 1;
-      z-index: 0;
-      
-      display: flex;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      flex-direction: row;
-      flex-wrap: wrap;
-      -webkit-flex-align: center;
-      -webkit-align-items: center;
-      align-items: center;
-      justify-content: center;
-      align-content: center;
-      
-      -webkit-transition: -webkit-transform 1600ms;
-      transition: -webkit-transform 1600ms, transform 1600ms;
-      -webkit-transform: scale(1);
-      transform: scale(1);
-      }
+#containers {
+		width:1000px;
+		height:90%;
+			overflow: hidden;
+	
+	
+}
 
 
-    .slide41 {
-      background: black;
-      background-image: url("fwdpics/social 1.jpg");
-      left: 0;
-      background-repeat: no-repeat;
-      background-size: contain;
-      background-position: center;
-      
-  }
-   .slide442 {
-      background: black;
-      background-image: url("fwdpics/social 2.jpg") ;
-      background-repeat: no-repeat;
-      background-size: contain;
-      background-position: center;
-      left: 100%
-  }
- 
-   .slider4 > div {
-    text-align: center;
-  }
-  /* Slider inner content */
-  .slider4 h2 {
-      color: #FFF;
-      font-weight: 900;
-      text-transform: uppercase;
-      font-size: 45px;
-      line-height: 120%;
-      opacity: 0;
-      -webkit-transform: translateX(500px);
-      transform: translateX(500px);
-  }
-  .slider4 .button4 {
-      color: #FFF;
-      padding: 5px 50px;
-      background: rgba(255,255,255,0.3);
-      text-decoration: none;
-      opacity: 0;
-      font-size: 15px;
-      line-height: 30px;
-      display: inline-block;
-      -webkit-transform: translateX(-500px);
-      transform: translateX(-500px);
-  }
-  .slider4 h2, .slider4 .button4 {
-      -webkit-transition: opacity 800ms, -webkit-transform 800ms;
-      transition: transform 800ms, opacity 800ms;
-      -webkit-transition-delay: 1s; /* Safari */
-      transition-delay: 1s;
-  }
-  /* Next and previous button */ 
-  .control4 {
-      position: absolute;
-      top: 50%;
-      width: 50px;
-      height: 50px;
-      margin-top: -25px;
-      z-index: 55;
-  }
-  .control4 label {
-      z-index: 0;
-      display: none;
-      text-align: center;
-      line-height: 50px;
-      font-size: 50px;
-      color: #FFF;
-      cursor: pointer;
-      opacity: 0.2;
-  }
-  .control4 label:hover {
-     opacity: 0.5;
-  }
-  .next4 {
-    right: 1%;
-  }
-  .previous4 {
-    left: 1%;
-  }
-  
-  /* Slider pagination */ 
-  .slider-pagination4 {
-      position: absolute;
-      bottom: 20px;
-      width: 100%;
-      left: 0;
-      text-align: center;
-      z-index: 1000;
-  }
-  .slider-pagination4 label {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      display: inline-block;
-      background: rgba(255,255,255,0.2);
-      margin: 0 2px;
-      border: solid 1px rgba(255,255,255,0.4);
-      cursor: pointer;
-      }
-      
-  /* Slider control active css for social*/
-  .slide-radio41:checked ~ .next4 .numb442, 
-  .slide-radio442:checked ~ .previous4 .numb41
-    {
-      display: block;
-      z-index: 1
+.photobanner {
+	
+		margin-bottom: 80px;
+
+
+}
+
+.photobanner img {
+	padding: 10px 10px 25px 10px;
+	background: #eee;
+	border: 1px solid #fff;
+	height: 520px ;
+	width:520px;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	-ms-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+
+.photobanner img:hover {
+	-webkit-transform: scale(1.1);
+	-moz-transform: scale(1.1);
+	-o-transform: scale(1.1);
+	-ms-transform: scale(1.1);
+	transform: scale(1.1);
+	cursor: pointer;
+
+	-webkit-box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
+	box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
+}
+
+
+/*keyframe animations*/
+.firsts {
+	-webkit-animation: bannermove 30s linear infinite;
+	-moz-animation: bannermove  30s linear infinite;
+	-ms-animation: bannermove  30s linear infinite;
+	animation: bannermove 30s linear infinite;
+}
+
+@keyframes "bannermove" {
+ 0% {
+    margin-left: 0px;
+ }
+ 100% {
+    margin-left: -2125px;
+ }
+
+}
+
+@-moz-keyframes bannermove {
+ 0% {
+   margin-left: 0px;
+ }
+ 100% {
+   margin-left: -2125px;
+ }
+
+}
+
+@-webkit-keyframes "bannermove" {
+ 0% {
+   margin-left: 0px;
+ }
+ 100% {
+   margin-left: -2125px;
+ }
+
+}
+
+@-ms-keyframes "bannermove" {
+ 0% {
+   margin-left: 0px;
+ }
+ 100% {
+   margin-left: -2125px;
+ }
+
+}
+
+@-o-keyframes "bannermove" {
+ 0% {
+   margin-left: 0px;
+ }
+ 100% {
+   margin-left: -2125px;
+ }
+
+}
+
+
   }
 
-    /* Slider pagination active css for social */
-  .slide-radio41:checked ~ .slider-pagination4 .page41, 
-  .slide-radio442:checked ~ .slider-pagination4 .page442
-  {	
-  		background: rgba(255,255,255,1)
-	}
-
-  /* css for sliding  effect when you click on control button for social*/
-  .slide-radio41:checked ~ .slider4 {
-      -webkit-transform: translateX(0%);
-      transform: translateX(0%);
-  }
-  .slide-radio442:checked ~ .slider4 {
-      -webkit-transform: translateX(-100%);
-      transform: translateX(-100%);
-  }
-  .slide-radio41:checked ~ .slide41 h2, 
-  .slide-radio442:checked ~ .slide442 h2, 
-  .slide-radio41:checked ~ .slide41 .button4, 
-  .slide-radio442:checked ~ .slide442 .button4{
-      -webkit-transform: translateX(0);
-      transform: translateX(0);
-      opacity: 1
-  }
-  
 /*------------------------------------------------------CN------------------------SLIDER 2----------------------------------------------------*/
 .css-slider-wrapper2 {
       display: block;
@@ -1639,57 +1887,6 @@ celebrating 32nd edition of Aarohi at VNIT, Nagpur.</p>
 <section id="social" class="scroll4">
   <div id="social" class="scroll4">
      <a href="#CN" class="homes4"><span></span></a>
-     <div class="css-slider-wrapper4">
-    
-    <input type="radio" name="slider4" class="slide-radio41" checked id="slider_41">
-    <input type="radio" name="slider4" class="slide-radio442" id="slider_442">
-
-    
-    
-    
-    <div class="slider-pagination4">
-        
-        <label for="slider_41" class="page41"></label> 
-        <label for="slider_442" class="page442"></label>
-
-
-    </div>
-    
-    <div class="next4 control4">
-        <label for="slider_41" class="numb41"><i class="fa fa-arrow-circle-right"></i></label>
-        <label for="slider_442" class="numb442"><i class="fa fa-arrow-circle-right"></i></label>
-
-
-    </div>
-    <div class="previous4 control4">
-        <label for="slider_41" class="numb41"><i class="fa fa-arrow-circle-left"></i></label>
-        <label for="slider_442" class="numb442"><i class="fa fa-arrow-circle-left"></i></label>
-
-    </div>
-    
-    
-    <div class="slider4 slide41">
-        <div>
-            <h2 style="
-    left: 35%;
-    top: 9%;
-    position: absolute;
-">SOCIAL INITIATIVES</h2>
-            <p style="font-size:109%;  bottom: 14%;color: white;left: 20%; position: absolute;">                           “The True essence of progress lies not in how far we go, in how far ahead we take the ones around us”</p>
-        </div>
-    </div>
-    <div class="slider4 slide442">
-        <div>
-            <h2 style=" left: 35%;
-    top: 9%;
-    position: absolute;">SOCIAL INITIATIVES</h2>
-           <p style=" bottom: 14%;color: white;left: 2%; position: absolute;">Keeping this in mind Aarohi plays host to various prestigious institutions involved in Philanthropy and Social Welfare and participates in various initiatives and awareness drives in the region in their collaboration. It is a humble endeavor on our part to express our gratitude towards the society</p>
-        </div>
-    </div>
-
-</div>
-<a href="#CN" class="homes4"><span></span></a>
-
    </div>
 </section>
 <section id="CN" class="scroll5">
@@ -1774,6 +1971,78 @@ celebrating 32nd edition of Aarohi at VNIT, Nagpur.</p>
    </div>
 </section>
 <section id="gallery" class="scroll7">
+
+	
+	
+
+<div id="containers"  >
+
+<h1 align="left" style="font-family:Sugar regular;top:10px ;">GALLERY</h1>
+
+
+<div class="photobanner">
+<img class="firsts" src="fwdwebcontent/Kenny.jpg"  alt="">
+<img src="fwdwebcontent/Events.jpg" alt="">
+<img src="fwdwebcontent/Proshow.jpg" alt="">
+<img src="fwdwebcontent/Cynosure.jpg" alt="">
+<img src="fwdwebcontent/Gaarva.jpg" alt="">
+<img src="fwdwebcontent/Kanan.jpg"  alt="">
+
+</div>
+</div>
+
+
+
+
+<!--<div class="containers">
+
+<div class="photobanner" >
+<img class="firsts pic-1" src="fwdwebcontent/Events.jpg" height= "520px" width="520px" alt="">
+<img class="pic-2" src="fwdwebcontent/Kenny.jpg" height= "520px" width="520px" alt="">
+<img class="pic-3" src="fwdwebcontent/Proshow.jpg" height= "520px" width="520px" alt="">
+<img class="pic-4" src="fwdwebcontent/Cynosure.jpg" height= "520px" width="520px" alt="">
+<img class="pic-5" src="fwdwebcontent/Gaarva.jpg" height= "520px" width="520px" alt="">
+<img class="pic-6" src="fwdwebcontent/Kanan.jpg" height= "520px" width="520px" alt="">
+<img class="pic-2" src="ifwdwebcontent/Events.jpg" height= "520px" width="520px" alt="">
+<img class="pic-3" src="fwdwebcontent/Kenny.jpg" height= "520px" width="520px" alt="">
+<img class="pic-4" src="fwdwebcontent/Proshow.jpg" height= "520px" width="520px" alt="">
+<img class="pic-5" src="fwdwebcontent/Cynosure.jpg" height= "520px" width="520px" alt="">
+<img class="pic-6" src="fwdwebcontent/Gaarva.jpg" height= "520px" width="520px" alt="">
+<img class="pic-6" src="fwdwebcontent/Kanan.jpg" height= "520px" width="220px" alt="">
+
+
+	<div class="photobanner" >
+		<ul  class="gallery" right="0px">
+		<li><a class="pic-1 firsts"><img src="fwdwebcontent/Danny.jpg" height= "220px" width="220px" alt="Photograph of a waterfall"></a></li>
+		<li><a class="pic-2"><img src="fwdwebcontent/Events.jpg" alt="Photograph of clouds and sunlight" height= "220px" width="220px"></a></li>
+		<li><a class="pic-3"><img src="fwdwebcontent/Kanan.jpg" alt="Photograph of a lake scene at dusk" height= "220px" width="220px"></a></li>
+		<li><a class="pic-4"><img src="fwdwebcontent/Gaarva.jpg" alt="Photograph of a tree and green grass" height= "220px" width="220px"></a></li>
+		<li><a class="pic-5"><img src="fwdwebcontent/Cynosure.jpg" alt="Photograph of a beach sunset" height= "220px" width="220px"></a></li>
+		<li><a class="pic-6"><img src="fwdwebcontent/CN.jpg" alt="Photograph of a flower and lake" height= "220px" width="220px"></a></li>
+		
+		<li><a class="pic-1"><img src="fwdwebcontent/Danny.jpg" height= "220px" width="220px" alt="Photograph of a waterfall"></a></li>
+		<li><a class="pic-2"><img src="fwdwebcontent/Events.jpg" alt="Photograph of clouds and sunlight" height= "220px" width="220px"></a></li>
+		<li><a class="pic-3"><img src="fwdwebcontent/Kanan.jpg" alt="Photograph of a lake scene at dusk" height= "220px" width="220px"></a></li>
+		<li><a class="pic-4"><img src="fwdwebcontent/Gaarva.jpg" alt="Photograph of a tree and green grass" height= "220px" width="220px"></a></li>
+		<li><a class="pic-5"><img src="fwdwebcontent/Cynosure.jpg" alt="Photograph of a beach sunset" height= "220px" width="220px"></a></li>
+		<li><a class="pic-6"><img src="fwdwebcontent/CN.jpg" alt="Photograph of a flower and lake" height= "220px" width="220px"></a></li>
+		<li><a class="pic-7"><img src="fwdwebcontent/Proshow.jpg" alt="Photograph of a flower and lake" height= "220px" width="220px"></a></li>
+		<li><a class="pic-8"><img src="fwdwebcontent/Kenny.jpg" alt="Photograph of a flower and lake" height= "220px" width="220px"></a></li>
+	</ul>
+</div>-->
+
+
+
+</div>
+
+</div>
+
+
+
+
+
+
+
   <div id="gallery" class="scroll7">
      <a href="#sponsor" class="homes7"><span></span></a>
    </div>
